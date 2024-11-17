@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "../components/Navbar/index";
 import Footer from "../components/Footer/Footer";
+import GraphQLProvider from "../lib/provider";
 
 export const metadata = {
   title: "ЖМ ДРИЙМ",
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <GraphQLProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </GraphQLProvider>
       </body>
     </html>
   );

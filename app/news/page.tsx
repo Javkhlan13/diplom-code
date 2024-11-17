@@ -115,7 +115,7 @@ const News = () => {
 
         <div className="grid grid-cols-3 gap-8 mx-28">
           {products.map((item) => (
-            <div className="flex flex-col items-center">
+            <div key={item.id} className="flex flex-col items-center">
               <Image
                 className="w-[350px] h-[200px]"
                 src={item.imageSrc}
