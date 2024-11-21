@@ -15,51 +15,54 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "Kashiwazaki-Kariwa Nuclear Power Station, Niigata Pref.",
+    name: "JLPT болон J.TEST ийн шалгалтын мэдээлэл",
     href: "#",
-    imageSrc: "/assets/mentor/boy1.svg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    color: "Japan shifting back to nuclear to ditch coal and power AI",
+    imageSrc: "/kanji.jpeg",
+    imageAlt: "Kanji",
+    color:
+      " Энэхүү шалгалтын гол зорилго нь Япон хэлний мэдлэгийн түвшинг тогтоож, баталгаажуулахад оршино. Зохион байгуулагч: JAPAN FOUNDATION Хэрэгжүүлэгч байгууллага: Монголын Япон Хэлний Багш нарын Холбоо",
   },
   {
     id: 2,
-    name: "Photoshop Instructor",
+    name: "2024 оны 7 сарын JLPT шалгалтын батламж сунгаж олгох тухай",
     href: "#",
-    imageSrc: "/assets/mentor/boy2.svg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    color: "Cristian Doru Barin",
+    imageSrc: "/JLPT-Exam .jpeg",
+    imageAlt: "JLPT",
+    color: "JLPT БАТЛАМЖ СУНГАЖ ОЛГОХ ТУХАЙ",
   },
   {
     id: 3,
-    name: "SEO Expert",
+    name: "JLPT болон J.TEST ийн шалгалтын мэдээлэл",
     href: "#",
-    imageSrc: "/assets/mentor/boy3.svg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    color: "Tanzeel Ur Rehman",
+    imageSrc: "/kanji.jpeg",
+    imageAlt: "Kanji",
+    color:
+      " Энэхүү шалгалтын гол зорилго нь Япон хэлний мэдлэгийн түвшинг тогтоож, баталгаажуулахад оршино. Зохион байгуулагч: JAPAN FOUNDATION Хэрэгжүүлэгч байгууллага: Монголын Япон Хэлний Багш нарын Холбоо",
   },
   {
     id: 4,
-    name: "UI/UX Designer",
+    name: "2024 оны 7 сарын JLPT шалгалтын батламж сунгаж олгох тухай",
     href: "#",
-    imageSrc: "/assets/mentor/boy4.svg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    color: "Andrew Williams",
+    imageSrc: "/JLPT-Exam .jpeg",
+    imageAlt: "JLPT",
+    color: "JLPT БАТЛАМЖ СУНГАЖ ОЛГОХ ТУХАЙ",
   },
   {
     id: 5,
-    name: "Web Development / Web Design",
+    name: "JLPT болон J.TEST ийн шалгалтын мэдээлэл",
     href: "#",
-    imageSrc: "/assets/mentor/boy5.svg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    color: "Brad Schiff",
+    imageSrc: "/kanji.jpeg",
+    imageAlt: "Kanji",
+    color:
+      " Энэхүү шалгалтын гол зорилго нь Япон хэлний мэдлэгийн түвшинг тогтоож, баталгаажуулахад оршино. Зохион байгуулагч: JAPAN FOUNDATION Хэрэгжүүлэгч байгууллага: Монголын Япон Хэлний Багш нарын Холбоо",
   },
   {
     id: 6,
-    name: "Adobe Certified Instructor",
+    name: "2024 оны 7 сарын JLPT шалгалтын батламж сунгаж олгох тухай",
     href: "#",
-    imageSrc: "/assets/mentor/girl1.svg",
-    imageAlt: "Front of men's Basic Tee in black.",
-    color: "Daniel Walter Scott",
+    imageSrc: "/JLPT-Exam .jpeg",
+    imageAlt: "JLPT",
+    color: "JLPT БАТЛАМЖ СУНГАЖ ОЛГОХ ТУХАЙ",
   },
 ];
 
@@ -115,7 +118,7 @@ const News = () => {
 
         <div className="grid grid-cols-3 gap-8 mx-28">
           {products.map((item) => (
-            <div key={item.id} className=" flex flex-col items-center">
+            <div className=" flex flex-col items-center">
               <Image
                 className="w-[350px] h-[200px]"
                 src={item.imageSrc}
@@ -133,49 +136,25 @@ const News = () => {
               <p className="py-8 font-serif">{item.color}</p>
             </div>
           ))}
-
-          <div className="flex flex-col items-center">
-            <Image
-              className="w-[350px] h-[200px]"
-              src={"/kanji.jpeg"}
-              width={250}
-              height={200}
-              alt="logo"
-            />
-            <Link
-              href={"/"}
-              className="font-semibold text-2xl my-4 leading-relaxed"
-            >
-              JLPT болон J.TEST ийн шалгалтын мэдээлэл
-            </Link>
-            <div className=" flex border-b border-solid border-zinc-800 w-20 h-5 "></div>
-            <p className="py-8 font-serif">
-              {" "}
-              Энэхүү шалгалтын гол зорилго нь Япон хэлний мэдлэгийн түвшинг
-              тогтоож, баталгаажуулахад оршино. Зохион байгуулагч: JAPAN
-              FOUNDATION Хэрэгжүүлэгч байгууллага: Монголын Япон Хэлний Багш
-              нарын Холбоо{" "}
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <Image
-              className="w-[350px] h-[200px]"
-              src={"/JLPT-Exam .jpeg"}
-              width={350}
-              height={200}
-              alt="logo"
-            />
-            <Link
-              href={"/"}
-              className="font-semibold text-2xl my-4 leading-relaxed"
-            >
-              2023 оны 12 сарын JLPT шалгалтын батламж сунгаж олгох тухай
-            </Link>
-            <div className=" flex border-b border-solid border-zinc-800 w-20 h-5 "></div>
-            <p className="py-8 font-serif"> JLPT БАТЛАМЖ СУНГАЖ ОЛГОХ ТУХАЙ </p>
-          </div>
         </div>
+
+        {/* <div className="flex flex-col items-center">
+          <Image
+            className="w-[350px] h-[200px]"
+            src={"/JLPT-Exam .jpeg"}
+            width={350}
+            height={200}
+            alt="logo"
+          />
+          <Link
+            href={"/"}
+            className="font-semibold text-2xl my-4 leading-relaxed"
+          >
+            2023 оны 12 сарын JLPT шалгалтын батламж сунгаж олгох тухай
+          </Link>
+          <div className=" flex border-b border-solid border-zinc-800 w-20 h-5 "></div>
+          <p className="py-8 font-serif"> </p>
+        </div> */}
       </div>
 
       <div className="flex flex-col items-center justify-center bg-blue-500 text-black py-20 text-center min-h-screen">
