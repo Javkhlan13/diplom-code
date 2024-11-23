@@ -7,16 +7,16 @@ import { useLogin } from "@/data/hooks/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { useAuth } from "@/lib/authContext";
 
 const formSchema = z.object({
   email: zods.emailZod,
   password: zods.passwordZod,
-  role: zods.roleZod,
 });
 
 const Signin = () => {
   let [isOpen, setIsOpen] = useState(false);
-
+  const { setUserData } = useAuth();
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -48,6 +48,7 @@ const Signin = () => {
       if (token) {
         sessionStorage.setItem("token", token);
         sessionStorage.setItem("userData", JSON.stringify(user));
+        setUserData(user);
         setIsOpen(false);
       }
     } catch (error) {
@@ -55,7 +56,7 @@ const Signin = () => {
     }
   };
   const { t } = useTranslation("common");
-
+  console.log(errors, "errors");
   return (
     <>
       <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -176,7 +177,7 @@ const Signin = () => {
 
                           <div className="text-sm">
                             <a
-                              href="#"
+                              href="/forgot"
                               className="font-medium text-indigo-600 hover:text-indigo-500"
                             >
                               Нууц үг мартсан?

@@ -3,10 +3,12 @@ import { Fragment, useState } from "react";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
 import zods from "@/lib/zod";
 import { any, z } from "zod";
-import { useLogin } from "@/data/hooks/auth";
+import { useRegister } from "@/data/hooks/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: zods.nameZod,
@@ -14,10 +16,10 @@ const formSchema = z.object({
   gender: zods.genderZod,
   email: zods.emailZod,
   password: zods.passwordZod,
-  role: zods.roleZod,
 });
 
 const Register = () => {
+  const router = useRouter();
   let [isOpen, setIsOpen] = useState(false);
 
   const closeModal = () => {
@@ -42,12 +44,18 @@ const Register = () => {
       password: "",
     },
   });
-  const { loginMutation, loading } = useLogin();
-  const onSubmit = async (data: any) => {
-    console.log(data, "burtguuleh shu");
+  const { registerMutation, loading } = useRegister();
+  const onSubmit = (values: z.infer<typeof formSchema>) => {
+    registerMutation({
+      variables: { ...values },
+      onCompleted() {
+        setIsOpen(false);
+        toast.success("Та амжилттай бүртгүүллээ");
+        router.push("/");
+      },
+    });
   };
   const { t } = useTranslation("common");
-
   return (
     <>
       <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto  sm:pr-0">
